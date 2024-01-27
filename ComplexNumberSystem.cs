@@ -18,7 +18,7 @@ namespace NymphoMini
             }
             set
             {
-                number = number + value;
+                number = value;
                 tempNumber = number * TempMultiplicator;
             }
         }
