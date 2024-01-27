@@ -27,7 +27,7 @@ namespace NymphoMini.Clicker
             }
             set
             {
-                number = number + value;
+                number = value;
             }
         }
 
