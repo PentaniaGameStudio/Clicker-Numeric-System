@@ -1,0 +1,43 @@
+// This is an example
+using TMPro;
+using UnityEngine;
+
+namespace NymphoMini.Clicker
+{
+    public class GameEngine : MonoBehaviour
+    {
+        [field: SerializeField]
+        private NumberSystem Click { get; set; } = new NumberSystem(0);
+
+        [field: SerializeField]
+        private NumberSystem Upgrade { get; set; } = new NumberSystem(1);
+
+        [SerializeField]
+        private TextMeshProUGUI CurrentValue;
+        [SerializeField]
+        private TextMeshProUGUI CurrentClickValue;
+
+        private void Start()
+        {
+            ShowNumber();
+        }
+
+        public void ClickUpgrade()
+        {
+            Upgrade.Multiply();
+            ShowNumber();
+        }
+
+        public void ClickAdd()
+        {
+            Click.Add(Upgrade);
+            ShowNumber();
+        }
+
+        public void ShowNumber()
+        {
+            CurrentValue.text = Click.ToString();
+            CurrentClickValue.text = Upgrade.ToString();
+        }
+    }
+}
