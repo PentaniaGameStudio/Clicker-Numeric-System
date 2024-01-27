@@ -150,4 +150,10 @@ namespace NymphoMini.Clicker
         // Returns the suffix associated with a given magnitude.
         private static string GetSuffix(QuantityMagnitude magnitude)
         {
-            return magnitude == QuantityMagnitude
+            return magnitude == QuantityMagnitude.Unit ? "" : magnitude.ToString();
+        }
+
+        #endregion
+
+    }
+}
