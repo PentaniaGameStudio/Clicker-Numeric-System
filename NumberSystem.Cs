@@ -18,6 +18,28 @@ namespace NymphoMini.Clicker
         [field: SerializeField]
         public QuantityMagnitude Magnitude { get; private set; } = QuantityMagnitude.Unit;
 
+        #region Constructor
+
+        public NumberSystem()
+        {
+            Number = 0;
+            Magnitude = QuantityMagnitude.Unit;
+        }
+
+        public NumberSystem(double number, QuantityMagnitude magnitude)
+        {
+            Number = number;
+            Magnitude = magnitude;
+        }
+
+        public NumberSystem(double number)
+        {
+            Number = number;
+            Magnitude = QuantityMagnitude.Unit;
+        }
+
+        #endregion
+
         #region Public Function
 
         public void Add(NumberSystem number) => Add(number.Number, number.Magnitude);
