@@ -112,11 +112,12 @@ namespace NymphoMini.Clicker
         }
 
         /// <summary>
-        /// Multiplies the current number by a specified value.
+        /// Multiplies the current number by a specified value. 1 mean x2, while 0.25 mean x1.25
         /// </summary>
-        public void Multiply(double value = 2f)
+        public void Multiply(double value = 1f)
         {
-            Number *= value;
+            Number += Number * value;
+            Multiplicator += value;
             NormalizeMagnitude();
         }
         #endregion
